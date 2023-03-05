@@ -1,0 +1,34 @@
+﻿{
+  "code": "throwndynamite",
+  "class": "EntityThrownDynamite",
+  "hitboxSize": {
+    "x": 1,
+    "y": 0.125
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "item/dynamitestick" },
+    "size": 0.33,
+    "behaviors": [
+      { "code": "passivephysics" },
+      { "code": "interpolateposition" }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "passivephysics" },
+      {
+        "code": "despawn",
+        "minSeconds": 300
+      }
+    ]
+  },
+  "sounds": {
+  },
+  "attributes": {
+    "physics": {
+      "groundDragFactor": 1,
+      "airDragFactor": 0.25
+    }
+  }
+}

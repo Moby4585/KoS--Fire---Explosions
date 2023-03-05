@@ -1,0 +1,25 @@
+﻿
+{
+  "ingredientPattern": "T,D",
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "game:flaxtwine",
+      "quantity": 1
+    },
+    "D": {
+      "type": "item",
+      "code": "kosfire:dynamitestick",
+      "quantity": 3
+    }
+  },
+  "width": 1,
+  "height": 2,
+  "name": "dynamite",
+  "shapeless": true,
+  "output": {
+    "type": "block",
+    "code": "kosfire:dynamitebundle",
+    "quantity": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "item-phosphorusmatch": "Phosphorus match",
+
+  "block-dynamitebundle": "Dynamite bundle",
+  "blockdesc-dynamitebundle": "<i>Kaboom?</i>",
+
+  "item-dynamitestick": "Dynamite stick",
+  "itemdesc-dynamitestick": "<i>Kaboom?</i>",
+
+  "item-nitroglycerinportion": "Nitroglycerin",
+  "incontainer-item-nitroglycerinportion": "Nitroglycerin",
+  "game:incontainer-item-nitroglycerinportion": "Nitroglycerin",
+  "itemdesc-nitroglycerinportion": "C<font size=\"10\">3</font>H<font size=\"10\">5</font>(NO<font size=\"10\">3</font>)<font size=\"10\">3</font>"
+}

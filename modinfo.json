@@ -1,0 +1,13 @@
+{
+  "type": "code",
+  "modid": "kosfire",
+  "name": "Kingdom of Science: Fire & Explosions",
+  "authors": ["Moby_"],
+  "description": "Adds various explosives and fire related items",
+  "version": "1.1.1",
+  "dependencies": {
+    "game": "",
+    "chemistrylib": "",
+    "aculinaryartillery":  ""
+  }
+}

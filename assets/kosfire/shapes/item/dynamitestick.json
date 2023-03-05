@@ -1,0 +1,48 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"dynamite": "block/dynamite"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 7.0, 0.0, 9.0 ], 
+			"to": [ 9.0, 8.0, 11.0 ], 
+			"rotationOrigin": [ 7.0, 0.0, 9.0 ],
+			"rotationY": 90.0,
+			"faces": {
+				"north": { "texture": "#dynamite", "uv": [ 1.0, 4.0, 3.0, 12.0 ], "autoUv": false },
+				"east": { "texture": "#dynamite", "uv": [ 5.0, 4.0, 7.0, 12.0 ] },
+				"south": { "texture": "#dynamite", "uv": [ 8.0, 4.0, 10.0, 12.0 ] },
+				"west": { "texture": "#dynamite", "uv": [ 12.0, 4.0, 14.0, 12.0 ] },
+				"up": { "texture": "#dynamite", "uv": [ 0.0, 2.0, 2.0, 4.0 ] },
+				"down": { "texture": "#dynamite", "uv": [ 0.0, 2.0, 2.0, 4.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube4",
+					"from": [ 0.7, 7.7, 1.2 ], 
+					"to": [ 2.7, 8.2, 1.7 ], 
+					"rotationOrigin": [ 0.7, 7.7, 1.2 ],
+					"rotationX": 180.0,
+					"rotationY": 22.5,
+					"rotationZ": -112.5,
+					"faces": {
+						"north": { "texture": "#dynamite", "uv": [ 8.0, 0.0, 10.0, 0.5 ] },
+						"east": { "texture": "#dynamite", "uv": [ 13.0, 0.0, 13.5, 0.5 ] },
+						"south": { "texture": "#dynamite", "uv": [ 8.0, 0.0, 10.0, 0.5 ] },
+						"west": { "texture": "#dynamite", "uv": [ 9.5, 0.0, 10.0, 0.5 ] },
+						"up": { "texture": "#dynamite", "uv": [ 8.0, 0.0, 10.0, 0.5 ] },
+						"down": { "texture": "#dynamite", "uv": [ 8.0, 0.0, 10.0, 0.5 ] }
+					}
+				}
+			]
+		}
+	]}

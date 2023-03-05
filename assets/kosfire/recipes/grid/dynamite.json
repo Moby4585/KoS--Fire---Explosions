@@ -1,0 +1,86 @@
+﻿[
+  {
+    "ingredientPattern": "TN,PL",
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:flaxtwine",
+        "quantity": 1
+      },
+      "N": {
+        "type": "block",
+        "code": "game:woodbucket"
+      },
+      "P": {
+        "type": "item",
+        "code": "game:paper-*",
+        "quantity": 1
+      },
+      "L": {
+        "type": "item",
+        "code": "game:lime",
+        "quantity": 1
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "attributes": {
+      "liquidContainerProps": {
+        "requiresContent": {
+          "type": "item",
+          "code": "kosfire:nitroglycerinportion"
+        },
+        "requiresLitres": 0.2
+      }
+    },
+    "name": "dynamite",
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "kosfire:dynamitestick",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "TN,PL",
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:flaxtwine",
+        "quantity": 1
+      },
+      "N": {
+        "type": "block",
+        "code": "game:bowl-fired"
+      },
+      "P": {
+        "type": "item",
+        "code": "game:paper-*",
+        "quantity": 1
+      },
+      "L": {
+        "type": "item",
+        "code": "game:lime",
+        "quantity": 1
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "attributes": {
+      "liquidContainerProps": {
+        "requiresContent": {
+          "type": "item",
+          "code": "kosfire:nitroglycerinportion"
+        },
+        "requiresLitres": 0.2
+      }
+    },
+    "name": "dynamite",
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "kosfire:dynamitestick",
+      "quantity": 2
+    }
+  }
+]

@@ -1,0 +1,27 @@
+﻿{
+  "ingredientPattern": "PK,S_",
+  "width": 2,
+  "height": 2,
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "chemistrylib:phosphorus-red",
+      "quantity": 1
+    },
+    "S": {
+      "type": "item",
+      "code": "game:stick",
+      "quantity": 1
+    },
+    "K": {
+      "type": "item",
+      "code": "game:saltpeter",
+      "quantity": 1
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "kosfire:phosphorusmatch",
+    "quantity": 4
+  }
+}

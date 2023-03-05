@@ -1,0 +1,38 @@
+[
+  {
+    "ingredients": [
+      {
+        "inputs": [
+          {
+            "type": "item",
+            "code": "chemistrylib:mineralacidportion-nitric",
+            "quantity": 3
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "type": "item",
+            "code": "chemistrylib:mineralacidportion-sulfuric",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "type": "item",
+            "code": "chemistrylib:organicliquidportion-glycerin",
+            "quantity": 1
+          }
+        ]
+      }
+    ],
+    "output": {
+      "type": "item",
+      "code": "kosfire:nitroglycerinportion",
+      "stackSize": 5
+    }
+  }
+] 
