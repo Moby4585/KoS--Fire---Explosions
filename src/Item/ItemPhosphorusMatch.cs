@@ -67,7 +67,7 @@ namespace kosfire
 
             if (api.Side == EnumAppSide.Client)
             {
-                byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "player/phosphormatch"), byEntity, byPlayer, true, 16);
+                byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "sounds/player/phosphormatch"), byEntity, byPlayer, true, 16);
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace kosfire
             {
                 return;
             }
-            byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "player/phosphormatch"), byEntity, byPlayer, true, 16);
+            //byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "sounds/player/phosphormatch"), byEntity, byPlayer, true, 16);
             slot.TakeOut(1);
             slot.MarkDirty();
 
