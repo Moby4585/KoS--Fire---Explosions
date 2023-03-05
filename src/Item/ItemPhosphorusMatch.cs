@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Client;
-using Vintagestory.API.Config;
+﻿using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
-using Vintagestory.API.MathTools;
-using Vintagestory.API.Util;
 using Vintagestory.GameContent;
-using Vintagestory.API.Datastructures;
-using Vintagestory;
 
 
 namespace kosfire
@@ -27,21 +16,17 @@ namespace kosfire
             Block block = byEntity.World.BlockAccessor.GetBlock(blockSel.Position);
 
             IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
-            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
+            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
             {
                 return;
             }
 
-
-            EnumIgniteState igniteState = block.OnTryIgniteBlock(byEntity, blockSel.Position, 0);
-            if (igniteState == EnumIgniteState.NotIgnitable)
+            if (!(block is IIgnitable ign) || ign.OnTryIgniteBlock(byEntity, blockSel.Position, 0) == EnumIgniteState.NotIgnitable)
             {
                 return;
             }
 
             handling = EnumHandHandling.PreventDefault;
-
-            
         }
 
 
@@ -53,7 +38,7 @@ namespace kosfire
             }
 
             IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
-            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
+            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
             {
                 return false;
             }
@@ -62,7 +47,9 @@ namespace kosfire
             Block block = byEntity.World.BlockAccessor.GetBlock(blockSel.Position);
 
 
-            EnumIgniteState igniteState = block.OnTryIgniteBlock(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 20f : 0f));
+            EnumIgniteState igniteState = EnumIgniteState.NotIgnitable;
+            if (block is IIgnitable ign) igniteState = ign.OnTryIgniteBlock(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 20f : 0f));
+
             if (igniteState == EnumIgniteState.NotIgnitable || igniteState == EnumIgniteState.NotIgnitablePreventDefault)
             {
                 return false;
@@ -76,32 +63,36 @@ namespace kosfire
         {
             if (blockSel == null) return;
 
+            IPlayer byPlayer = (byEntity as EntityPlayer)?.Player ?? null;
+
+            if (api.Side == EnumAppSide.Client)
+            {
+                byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "player/phosphormatch"), byEntity, byPlayer, true, 16);
+                return;
+            }
+
             Block block = byEntity.World.BlockAccessor.GetBlock(blockSel.Position);
-            EnumIgniteState igniteState = block.OnTryIgniteBlock(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 20f : 0f));
+
+            EnumIgniteState igniteState = EnumIgniteState.NotIgnitable;
+            var ign = block as IIgnitable;
+            if (ign != null) igniteState = ign.OnTryIgniteBlock(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 20f : 0f));
+
             if (igniteState != EnumIgniteState.IgniteNow)
             {
                 return;
             }
-
-            IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
-            if (api.Side == EnumAppSide.Client)
-            {
-                byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "sounds/player/phosphormatch"), byEntity, byPlayer, true, 16);
-                return;
-            }
-
-            //DamageItem(api.World, byEntity, slot);
+            byEntity.World.PlaySoundAt(new AssetLocation("kosfire", "player/phosphormatch"), byEntity, byPlayer, true, 16);
             slot.TakeOut(1);
             slot.MarkDirty();
 
-            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
+            if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
             {
                 return;
             }
 
 
             EnumHandling handled = EnumHandling.PassThrough;
-            block.OnTryIgniteBlockOver(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 20f : 0f), ref handled);
+            ign.OnTryIgniteBlockOver(byEntity, blockSel.Position, (secondsUsed > 0.1f ? secondsUsed * 50f : 0f), ref handled);
         }
 
 
