@@ -1,0 +1,11 @@
+{
+	"block-dynamitebundle": "Связка динамита",
+	"blockdesc-dynamitebundle": "<i>Бум?</i>",
+	"game:incontainer-item-nitroglycerinportion": "Нитроглицерин",
+	"incontainer-item-nitroglycerinportion": "Нитроглицерин",
+	"item-dynamitestick": "Динамитная шашка",
+	"item-nitroglycerinportion": "Нитроглицерин",
+	"item-phosphorusmatch": "Фосфорная спичка",
+	"itemdesc-dynamitestick": "<i>Бум?</i>",
+	"itemdesc-nitroglycerinportion": "C<font size=\"10\">3</font>H<font size=\"10\">5</font>(NO<font size=\"10\">3</font>)<font size=\"10\">3</font>"
+}
